@@ -28,7 +28,40 @@ The companion website (linked above) provides a clean, browsable interface where
 
 | # | Title | Type | Report | Notebook |
 |---|-------|------|:------:|:--------:|
+| HW1 | Decision Tree Learning | Individual Homework | [HTML](./CS361_HW1_PAN.html) | [ipynb](./CS361_HW1_PAN.ipynb) |
+| HW2 | Naive Bayes Text Classification | Individual Homework | [HTML](./CS361_HW2_Pan.html) | [ipynb](./CS361_HW2_Pan.ipynb) |
 | A3 | BBC News Classification | Group Project · Group 4 | [HTML](./A3_Group_4.html) | [ipynb](./A3_Group_4.ipynb) |
+
+### Homework 1 — Decision Tree Learning *(Individual)*
+
+A decision-tree classifier built entirely from scratch with NumPy. The implementation covers the full ID3-style learning procedure — entropy-based information gain, an exhaustive search-and-score routine to find the best split, recursive tree building, and configurable depth control. The model is evaluated on a wine-quality dataset binarised into good (quality ≥ 7) vs. not-good wines, followed by a critical reflection on splitting-criterion choices and overfitting.
+
+- **Dataset:** Wine Quality — binarised (quality ≥ 7 vs. < 7)
+- **Author:** Jeremiah (Jiaxin) Pan
+
+**Tasks covered:**
+
+1. **Coding** — (1-A) basic decision-tree learning procedure with information gain and best-split search; (1-A & 1-B) recursive tree building with depth control; (1-B) discussion of depth levels 2 / 3 / 4; (1-C) test procedure and evaluation.
+2. **Reflection** — analysis of changing the splitting criterion and the effect of depth on generalisation.
+
+**Techniques & tools:** `numpy`, decision trees from scratch, entropy, information gain, recursive splitting, depth control, binary classification.
+
+### Homework 2 — Naive Bayes Text Classification *(Individual)*
+
+A Multinomial Naive Bayes classifier implemented from scratch in NumPy, with probability computations performed in log-space to avoid floating-point underflow. Starting from a standard model on preprocessed abstract texts, the work explores model extensions (n-gram features), empirical hyperparameter tuning, and a rigorous evaluation against a null baseline.
+
+- **Dataset:** Abstract texts — binary classification
+- **Author:** Jeremiah (Jiaxin) Pan
+
+**Tasks covered:**
+
+1. **Data Representation, Preprocessing & Standard Implementation** — text cleaning and a from-scratch Naive Bayes classifier in log-space.
+2. **Model Extensions & Modifications** — enhancements addressing Naive Bayes assumptions (e.g. n-gram features).
+3. **Hyper-parameters Tuning** — empirical tuning of feature-extraction parameters (e.g. `ngram_range`).
+4. **Evaluation Procedure** — 80/20 train/validation split with a null (majority-class) baseline.
+5. **Results & Analysis** — accuracy comparison (Null ≈ 50.6%, Standard NB ≈ 92.8%).
+
+**Techniques & tools:** `numpy`, Multinomial Naive Bayes from scratch, log-space probabilities, n-grams, train/validation split, null baseline, accuracy evaluation.
 
 ### Assignment 3 — BBC News Classification *(Group Project)*
 
@@ -54,6 +87,10 @@ A complete supervised text-classification pipeline built on the BBC News dataset
 ML-coursework-projects/
 ├── index.html              # Landing page served by GitHub Pages
 ├── README.md               # This file
+├── CS361_HW1_PAN.html      # Homework 1 — rendered HTML report
+├── CS361_HW1_PAN.ipynb     # Homework 1 — Jupyter notebook source
+├── CS361_HW2_Pan.html      # Homework 2 — rendered HTML report
+├── CS361_HW2_Pan.ipynb     # Homework 2 — Jupyter notebook source
 ├── A3_Group_4.html         # Assignment 3 — rendered HTML report
 └── A3_Group_4.ipynb        # Assignment 3 — Jupyter notebook source
 ```
