@@ -4,6 +4,8 @@ A collection of coursework, assignments, and group projects completed for **COMP
 
 🌐 **Live site:** [https://jeremiahpan23.github.io/ML-coursework-projects/](https://jeremiahpan23.github.io/ML-coursework-projects/)
 
+👤 **Author:** Jeremiah (Jiaxin) Pan · [GitHub](https://github.com/JeremiahPan23) · [LinkedIn](https://www.linkedin.com/in/jiaxin-pan-859828344)
+
 ---
 
 ## ✨ Overview
