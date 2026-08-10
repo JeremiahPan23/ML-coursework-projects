@@ -26,11 +26,32 @@ The companion website (linked above) provides a clean, browsable interface where
 
 ## 📂 Assignments
 
+> **⚠️ Flagship project:** Assignment 3 (BBC News Classification) is the most comprehensive deliverable this semester. It is featured as the hero project on the landing page and described in detail first, below.
+
 | # | Title | Type | Report | Notebook |
 |---|-------|------|:------:|:--------:|
+| **A3** | **BBC News Classification** ⭐ FLAGSHIP | **Group Project · Group 4** | **[HTML](./A3_Group_4.html)** | **[ipynb](./A3_Group_4.ipynb)** |
 | HW1 | Decision Tree Learning | Individual Homework | [HTML](./CS361_HW1_PAN.html) | [ipynb](./CS361_HW1_PAN.ipynb) |
 | HW2 | Naive Bayes Text Classification | Individual Homework | [HTML](./CS361_HW2_Pan.html) | [ipynb](./CS361_HW2_Pan.ipynb) |
-| A3 | BBC News Classification | Group Project · Group 4 | [HTML](./A3_Group_4.html) | [ipynb](./A3_Group_4.ipynb) |
+
+### Assignment 3 — BBC News Classification *(Flagship · Group Project)*
+
+The largest, most rigorous piece of work produced this semester — a full end-to-end supervised text-classification pipeline on the BBC News dataset, delivered by a 5-person team. The project benchmarks **four different model families** (Naive Bayes, kNN, SVM with Linear and RBF kernels, and an ANN/MLP), conducts **5-fold cross-validation with GridSearchCV** on each, compares them on weighted F1, and analyses generalisation via a training-size study.
+
+- **Dataset:** BBC News — 428 training articles, 106 testing articles (tech vs. entertainment)
+- **Team:** Jeremiah (Jiaxin) Pan [Group Leader], Zhenyu Xiao, Fanling Zeng, Tingrui Li, Sicheng Li
+- **Scope:** 5 people · 4 models · 4 major tasks · ≈ 13,500 extracted features
+
+**Tasks covered:**
+
+1. **Task 1 — Exploratory Data Analysis** — feature extraction with CountVectorizer / TF-IDF, top-50 term frequency plots, per-class frequency and class-balance visualisations.
+2. **Task 2 — Classification Models Learning** — Naive Bayes (Multinomial) with likelihood-ratio & discriminative-word analysis, kNN (multiple distance metrics, k sensitivity, PCA decision boundaries), SVM (Linear soft-margin + RBF kernel with C/γ study, PCA boundaries), ANN/MLP (Truncated SVD dimensionality reduction, hidden-unit sweep).
+3. **Task 3 — Classification Quality Evaluation** — 5-fold CV hyperparameter tuning for all four models, side-by-side weighted F1 comparison on the test set, plus a training-fraction impact study (test F1 vs. m).
+4. **Task 4 — Insights Summary** — cross-model findings, EDA insights, and a final recommendation (**Linear SVM with C=1** is both the strongest and most reliable predictor, while Naive Bayes is the most interpretable).
+
+**Techniques & tools:** `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`, TF-IDF / CountVectorizer feature extraction, PCA & Truncated SVD projections, 5-fold CV with GridSearchCV, weighted F1, decision-boundary visualisation.
+
+---
 
 ### Homework 1 — Decision Tree Learning *(Individual)*
 
@@ -62,22 +83,6 @@ A Multinomial Naive Bayes classifier implemented from scratch in NumPy, with pro
 5. **Results & Analysis** — accuracy comparison (Null ≈ 50.6%, Standard NB ≈ 92.8%).
 
 **Techniques & tools:** `numpy`, Multinomial Naive Bayes from scratch, log-space probabilities, n-grams, train/validation split, null baseline, accuracy evaluation.
-
-### Assignment 3 — BBC News Classification *(Group Project)*
-
-A complete supervised text-classification pipeline built on the BBC News dataset, classifying articles as either **tech** or **entertainment**. The project walks through the full machine-learning workflow: from exploratory data analysis and feature extraction, through training and tuning four different classifiers, to a rigorous comparative evaluation.
-
-- **Dataset:** BBC News — 428 training articles and 106 testing articles (binary: tech vs. entertainment)
-- **Group 4 members:** Jeremiah (Jiaxin) Pan *(Group Leader)*, Zhenyu Xiao, Fanling Zeng, Tingrui Li, Sicheng Li
-
-**Tasks covered:**
-
-1. **Exploratory Data Analysis** — feature extraction with `CountVectorizer` / TF-IDF, term-frequency and class-distribution visualizations.
-2. **Classification Models Learning** — Multinomial Naive Bayes, k-Nearest Neighbours, Support Vector Machines (Linear & RBF kernels), and an Artificial Neural Network (MLP with Truncated SVD).
-3. **Classification Quality Evaluation** — 5-fold cross-validation hyperparameter tuning (`GridSearchCV`), model comparison using weighted F1 score, and analysis of training-data-size impact.
-4. **Insights Summary** — discussion of findings across models and the overall learning outcomes.
-
-**Techniques & tools:** `scikit-learn`, TF-IDF / CountVectorizer, PCA, Multinomial Naive Bayes, kNN, Linear & RBF SVM, MLP/ANN, 5-fold cross-validation, GridSearchCV, weighted F1 evaluation, matplotlib/seaborn visualizations.
 
 ---
 

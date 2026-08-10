@@ -247,6 +247,170 @@
   /* reveal animation */
   .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.in { opacity: 1; transform: none; }
+
+  /* ---------- Featured / Flagship project ---------- */
+  #featured { padding-top: 8px; }
+  .featured-wrap {
+    position: relative;
+    background: linear-gradient(180deg, #141b30 0%, #0f1424 100%);
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    padding: 44px 48px 48px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .featured-wrap::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--grad);
+  }
+  .featured-wrap::after {
+    content: "";
+    position: absolute; right: -120px; top: -120px;
+    width: 440px; height: 440px; border-radius: 50%;
+    background: var(--grad); filter: blur(90px); opacity: .22;
+    pointer-events: none;
+  }
+  .featured-label {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 12.5px;
+    padding: 7px 14px; border-radius: 999px;
+    background: linear-gradient(135deg, rgba(99,102,241,.2), rgba(34,211,238,.14));
+    border: 1px solid rgba(99,102,241,.35);
+    color: #c7d2fe; font-weight: 600; letter-spacing: .04em;
+    margin-bottom: 22px;
+  }
+  .featured-label .star { color: #fbbf24; font-size: 14px; }
+  .featured-grid {
+    display: grid; grid-template-columns: 1.25fr 1fr; gap: 40px;
+    align-items: stretch;
+    position: relative; z-index: 1;
+  }
+  .featured-main .num-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px;
+    padding: 6px 12px; border-radius: 8px;
+    background: rgba(251,191,36,.12); color: #fcd34d;
+    border: 1px solid rgba(251,191,36,.28);
+    margin-bottom: 14px;
+  }
+  .featured-main h2 {
+    font-size: clamp(26px, 3.2vw, 38px);
+    font-weight: 800; letter-spacing: -.025em; line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .featured-main .subtitle {
+    font-size: 16px; color: var(--text-dim); margin-bottom: 22px; max-width: 58ch;
+  }
+  .featured-tasks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin: 22px 0 26px; }
+  .task-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; }
+  .task-item .ti-num {
+    width: 26px; height: 26px; flex-shrink: 0;
+    border-radius: 7px;
+    background: rgba(99,102,241,.16); border: 1px solid rgba(99,102,241,.32);
+    display: grid; place-items: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 11.5px; font-weight: 700; color: #a5b4fc;
+  }
+  .task-item .ti-body { line-height: 1.45; }
+  .task-item .ti-body strong { font-size: 13.5px; color: var(--text); display: block; }
+  .task-item .ti-body span { font-size: 12.5px; color: var(--text-mute); }
+
+  .featured-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+  .featured-tags .chip { padding: 7px 13px; font-size: 12.5px; }
+
+  .featured-meta {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    padding: 16px 20px;
+    border: 1px solid var(--border-soft); border-radius: 14px;
+    background: rgba(255,255,255,.015);
+    margin-bottom: 28px;
+  }
+  .featured-meta .fm-row { font-size: 13px; }
+  .featured-meta .fm-row .label { font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; color: var(--text-mute); }
+  .featured-meta .fm-row .val { color: var(--text); font-weight: 500; margin-top: 2px; }
+
+  .featured-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .featured-actions .btn { padding: 14px 24px; font-size: 14.5px; }
+  .featured-actions .btn svg { width: 18px; height: 18px; }
+  .btn-lg-primary {
+    background: var(--grad); color: #fff;
+    box-shadow: 0 14px 34px -10px rgba(99,102,241,.7);
+  }
+  .btn-lg-primary:hover { transform: translateY(-2px); box-shadow: 0 20px 44px -10px rgba(99,102,241,.9); }
+  .btn-lg-ghost {
+    border: 1px solid var(--border); background: rgba(255,255,255,.03); color: var(--text);
+  }
+  .btn-lg-ghost:hover { border-color: var(--indigo); background: rgba(99,102,241,.12); transform: translateY(-2px); }
+
+  /* Stats side of featured card */
+  .featured-side {
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .stat-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+  .kpi {
+    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 18px 20px;
+    transition: transform .2s, border-color .2s;
+  }
+  .kpi:hover { transform: translateY(-2px); border-color: #344063; }
+  .kpi .kpi-k {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+    color: var(--text-mute); font-weight: 600;
+  }
+  .kpi .kpi-v {
+    font-family: 'Inter', sans-serif; font-weight: 800;
+    font-size: 30px; letter-spacing: -.03em; line-height: 1.15; margin-top: 8px;
+    background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .kpi .kpi-u { font-size: 12px; color: var(--text-dim); margin-top: 4px; font-weight: 500; }
+
+  .highlights {
+    background: linear-gradient(180deg, rgba(99,102,241,.07), rgba(34,211,238,.03));
+    border: 1px solid rgba(99,102,241,.22);
+    border-radius: 14px;
+    padding: 18px 20px;
+    flex: 1;
+  }
+  .highlights h4 {
+    font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+    color: #c4b5fd; margin-bottom: 12px;
+  }
+  .highlights ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .highlights li {
+    display: flex; align-items: flex-start; gap: 9px;
+    font-size: 13.5px; color: var(--text-dim); line-height: 1.5;
+  }
+  .highlights li .check {
+    color: var(--emerald); flex-shrink: 0; margin-top: 1px;
+  }
+  .highlights li strong { color: var(--text); font-weight: 600; }
+
+  /* Secondary homework cards grid (smaller than before) */
+  .grid-compact {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 22px;
+  }
+  .card.card-compact { padding: 24px; }
+  .card.card-compact h3 { font-size: 19px; }
+  .card.card-compact p.desc { font-size: 13.5px; }
+  .card.card-compact .meta-row { font-size: 12.5px; }
+  .card.card-compact .card-foot .btn { padding: 10px 14px; font-size: 13px; }
+  .card.card-compact .link-ghost { padding: 10px 14px; font-size: 13px; }
+
+  @media (max-width: 920px) {
+    .featured-grid { grid-template-columns: 1fr; }
+    .featured-wrap { padding: 32px 28px; }
+    .featured-tasks { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px) {
+    .featured-meta { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .featured-actions { flex-direction: column; }
+    .featured-actions .btn { justify-content: center; }
+  }
 </style>
 </head>
 <body>
@@ -262,7 +426,8 @@
       </div>
     </a>
     <div class="nav-links">
-      <a href="#assignments">Assignments</a>
+      <a href="#featured">Flagship Project</a>
+      <a href="#assignments">Homework</a>
       <a href="#about">About</a>
       <a class="nav-cta" href="https://github.com/JeremiahPan23/ML-coursework-projects" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12 11.5 11.5 0 0 0 8.36 22.94c.59.11.8-.26.8-.57v-2c-3.26.71-3.95-1.57-3.95-1.57-.54-1.36-1.31-1.72-1.31-1.72-1.07-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.05 1.8 2.76 1.28 3.43.98.11-.76.41-1.28.74-1.57-2.61-.3-5.36-1.3-5.36-5.8 0-1.28.46-2.33 1.21-3.15-.12-.3-.53-1.5.12-3.13 0 0 .99-.32 3.25 1.2a11.3 11.3 0 0 1 5.92 0c2.26-1.52 3.25-1.2 3.25-1.2.65 1.63.24 2.83.12 3.13.76.82 1.21 1.87 1.21 3.15 0 4.51-2.76 5.5-5.38 5.79.42.37.8 1.1.8 2.22v3.29c0 .31.21.69.81.57A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
@@ -279,9 +444,9 @@
     <h1 class="hero-title reveal">Machine Learning<br><span class="grad-text">Coursework &amp; Projects</span></h1>
     <p class="hero-sub reveal">A curated collection of assignments and group projects from <strong>COMPSCI 361 — Machine Learning</strong>. Each report explores real datasets through exploratory analysis, model building, and rigorous evaluation — all viewable online with a single click.</p>
     <div class="hero-actions reveal">
-      <a href="#assignments" class="btn btn-primary">
+      <a href="#featured" class="btn btn-primary">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        Browse Assignments
+        See Flagship Project
       </a>
       <a href="https://github.com/JeremiahPan23/ML-coursework-projects" target="_blank" rel="noopener" class="btn btn-ghost">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12 11.5 11.5 0 0 0 8.36 22.94c.59.11.8-.26.8-.57v-2c-3.26.71-3.95-1.57-3.95-1.57-.54-1.36-1.31-1.72-1.31-1.72-1.07-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.05 1.8 2.76 1.28 3.43.98.11-.76.41-1.28.74-1.57-2.61-.3-5.36-1.3-5.36-5.8 0-1.28.46-2.33 1.21-3.15-.12-.3-.53-1.5.12-3.13 0 0 .99-.32 3.25 1.2a11.3 11.3 0 0 1 5.92 0c2.26-1.52 3.25-1.2 3.25-1.2.65 1.63.24 2.83.12 3.13.76.82 1.21 1.87 1.21 3.15 0 4.51-2.76 5.5-5.38 5.79.42.37.8 1.1.8 2.22v3.29c0 .31.21.69.81.57A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
@@ -298,17 +463,32 @@
   </div>
 </header>
 
-<!-- ===== Assignments ===== -->
+<!-- ===== Featured / Flagship Project — A3 ===== -->
+<section id="featured">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">// flagship project</div>
+        <h2>Featured Group Project</h2>
+        <p>The largest and most comprehensive piece of work this semester — spanning four models, rigorous evaluation, and a 5-person team delivery.</p>
+      </div>
+    </div>
+
+    <div class="featured-wrap reveal" id="featured-wrap"></div>
+  </div>
+</section>
+
+<!-- ===== Individual Homeworks ===== -->
 <section id="assignments">
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="section-tag">// assignments</div>
-        <h2>Coursework Showcase</h2>
-        <p>Click any card to open the full rendered report. Each project includes the complete analysis, code, figures, and discussion.</p>
+        <div class="section-tag">// individual homeworks</div>
+        <h2>Other Coursework</h2>
+        <p>Two individual homework assignments — each a focused from-scratch implementation of a core machine-learning algorithm.</p>
       </div>
     </div>
-    <div class="grid" id="cards"></div>
+    <div class="grid grid-compact" id="cards"></div>
   </div>
 </section>
 
@@ -346,10 +526,47 @@
 </footer>
 
 <script>
-  // ===== Assignment data — add new entries here as future assignments are completed =====
+  // ===== Assignment data =====
   const REPO = "https://github.com/JeremiahPan23/ML-coursework-projects";
   const NBVIEWER = (path) => `https://nbviewer.org/github/JeremiahPan23/ML-coursework-projects/blob/main/${path}`;
 
+  // ---------- Flagship / featured project: Assignment 3 ----------
+  const FEATURED = {
+    num: "A3",
+    title: "BBC News Classification",
+    subtitle: "A complete end-to-end supervised text-classification project on the BBC News dataset, benchmarking Naive Bayes, k-NN, SVM, and ANN classifiers with tuned hyperparameters, decision-boundary visualisation, and comparative analysis.",
+    type: "Group Project · Group 4",
+    tags: {
+      model: ["Naive Bayes", "kNN", "SVM (Linear & RBF)", "ANN / MLP"],
+      feat:  ["TF-IDF", "CountVectorizer", "PCA", "Truncated SVD"],
+      eval:  ["5-Fold CV", "GridSearchCV", "Weighted F1"]
+    },
+    tasks: [
+      { n: 1, t: "Exploratory Data Analysis", d: "Feature extraction, term-frequency & class-distribution visualisations" },
+      { n: 2, t: "Classification Models Learning", d: "NB, kNN, SVM (Linear & RBF kernels), ANN/MLP training" },
+      { n: 3, t: "Classification Quality Evaluation", d: "5-fold CV tuning, F1 comparison, training-size impact study" },
+      { n: 4, t: "Insights Summary", d: "Cross-model discussion, recommendations, and overall findings" }
+    ],
+    team: "Jeremiah (Jiaxin) Pan (Leader), Zhenyu Xiao, Fanling Zeng, Tingrui Li, Sicheng Li",
+    dataset: "BBC News · 428 train / 106 test (tech vs. entertainment)",
+    scope: "5 people · 4 models · 4 major tasks",
+    kpis: [
+      { k: "Models",            v: "4",     u: "trained and compared" },
+      { k: "Train Articles",    v: "428",   u: "labelled for training" },
+      { k: "CV Folds",          v: "5",     u: "for hyperparameter tuning" },
+      { k: "Unique Features",   v: "13.5k", u: "extracted from corpus" }
+    ],
+    highlights: [
+      { t: "Best performer", d: "Linear SVM with C=1 reached the strongest weighted F1" },
+      { t: "Interpretable", d: "Naive Bayes likelihood ratios highlight discriminative vocabulary" },
+      { t: "Visualised boundaries", d: "PCA 2D projections for kNN and SVM decision surfaces" },
+      { t: "Tuning-first", d: "GridSearchCV on SVM / NB / kNN / ANN to guard against under-/over-fit" }
+    ],
+    html: "A3_Group_4.html",
+    notebook: "A3_Group_4.ipynb"
+  };
+
+  // ---------- Individual homeworks ----------
   const assignments = [
     {
       num: "HW1",
@@ -384,28 +601,82 @@
       tasks: "Preprocessing · Extensions · Tuning · Evaluation",
       html: "CS361_HW2_Pan.html",
       notebook: "CS361_HW2_Pan.ipynb"
-    },
-    {
-      num: "A3",
-      title: "BBC News Classification",
-      type: "Group Project · Group 4",
-      status: "Completed",
-      desc: "A supervised text-classification pipeline on the BBC News dataset, classifying articles as tech vs. entertainment — spanning EDA, four classifiers, and rigorous comparative evaluation.",
-      tags: {
-        model: ["Naive Bayes", "kNN", "SVM (Linear & RBF)", "ANN / MLP"],
-        feat:  ["TF-IDF", "CountVectorizer", "PCA", "Truncated SVD"],
-        eval:  ["5-Fold CV", "GridSearchCV", "Weighted F1"]
-      },
-      members: "Jeremiah (Jiaxin) Pan (Leader), Zhenyu Xiao, Fanling Zeng, Tingrui Li, Sicheng Li",
-      dataset: "BBC News · 428 train / 106 test",
-      tasks: "EDA · Model Learning · Evaluation · Insights",
-      html: "A3_Group_4.html",
-      notebook: "A3_Group_4.ipynb"
     }
-    // ── To add a new assignment, copy the block above and update the fields. ──
   ];
 
-  // ===== Render cards =====
+  // ===== Render featured flagship project =====
+  const featuredEl = document.getElementById("featured-wrap");
+  {
+    const f = FEATURED;
+    const chips = [
+      ...f.tags.model.map(t => `<span class="chip model">${t}</span>`),
+      ...f.tags.feat.map(t  => `<span class="chip feat">${t}</span>`),
+      ...f.tags.eval.map(t  => `<span class="chip eval">${t}</span>`)
+    ].join("");
+
+    const tasks = f.tasks.map(t => `
+      <div class="task-item">
+        <div class="ti-num">${t.n}</div>
+        <div class="ti-body"><strong>${t.t}</strong><span>${t.d}</span></div>
+      </div>
+    `).join("");
+
+    const kpis = f.kpis.map(k => `
+      <div class="kpi">
+        <div class="kpi-k">${k.k}</div>
+        <div class="kpi-v">${k.v}</div>
+        <div class="kpi-u">${k.u}</div>
+      </div>
+    `).join("");
+
+    const highlights = f.highlights.map(h => `
+      <li>
+        <svg class="check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <div><strong>${h.t}:</strong> ${h.d}</div>
+      </li>
+    `).join("");
+
+    featuredEl.innerHTML = `
+      <div class="featured-label"><span class="star">★</span> FLAGSHIP · ASSIGNMENT 3</div>
+      <div class="featured-grid">
+        <div class="featured-main">
+          <span class="num-tag">${f.num}</span>
+          <h2>${f.title}</h2>
+          <p class="subtitle">${f.subtitle}</p>
+          <div class="featured-tasks">${tasks}</div>
+          <div class="featured-tags">${chips}</div>
+          <div class="featured-meta">
+            <div class="fm-row"><div class="label">Team</div><div class="val">${f.team}</div></div>
+            <div class="fm-row"><div class="label">Dataset</div><div class="val">${f.dataset}</div></div>
+            <div class="fm-row"><div class="label">Type</div><div class="val">${f.type}</div></div>
+            <div class="fm-row"><div class="label">Scope</div><div class="val">${f.scope}</div></div>
+          </div>
+          <div class="featured-actions">
+            <a class="btn btn-lg-primary" href="./${f.html}" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              Open Full Report
+            </a>
+            <a class="btn btn-lg-ghost" href="${NBVIEWER(f.notebook)}" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              View Notebook on nbviewer
+            </a>
+            <a class="btn btn-lg-ghost" href="https://github.com/JeremiahPan23/ML-coursework-projects/blob/main/${f.notebook}" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12 11.5 11.5 0 0 0 8.36 22.94c.59.11.8-.26.8-.57v-2c-3.26.71-3.95-1.57-3.95-1.57-.54-1.36-1.31-1.72-1.31-1.72-1.07-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.05 1.8 2.76 1.28 3.43.98.11-.76.41-1.28.74-1.57-2.61-.3-5.36-1.3-5.36-5.8 0-1.28.46-2.33 1.21-3.15-.12-.3-.53-1.5.12-3.13 0 0 .99-.32 3.25 1.2a11.3 11.3 0 0 1 5.92 0c2.26-1.52 3.25-1.2 3.25-1.2.65 1.63.24 2.83.12 3.13.76.82 1.21 1.87 1.21 3.15 0 4.51-2.76 5.5-5.38 5.79.42.37.8 1.1.8 2.22v3.29c0 .31.21.69.81.57A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+              Source on GitHub
+            </a>
+          </div>
+        </div>
+        <div class="featured-side">
+          <div class="stat-grid">${kpis}</div>
+          <div class="highlights">
+            <h4>Project Highlights</h4>
+            <ul>${highlights}</ul>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // ===== Render individual homework cards (compact) =====
   const cardsEl = document.getElementById("cards");
   const fragments = assignments.map((a, i) => {
     const chips = [
@@ -415,7 +686,7 @@
     ].join("");
 
     return `
-      <article class="card reveal" style="transition-delay:${i * 80}ms">
+      <article class="card card-compact reveal" style="transition-delay:${i * 80}ms">
         <div class="card-head">
           <span class="badge-num">${a.num}</span>
           <span class="badge-type"><span class="pulse"></span>${a.type}</span>
@@ -424,7 +695,7 @@
         <p class="desc">${a.desc}</p>
         <div class="tags">${chips}</div>
         <div class="meta">
-          <div class="meta-row"><span class="label">Team</span><span class="val">${a.members}</span></div>
+          <div class="meta-row"><span class="label">Author</span><span class="val">${a.members}</span></div>
           <div class="meta-row"><span class="label">Dataset</span><span class="val">${a.dataset}</span></div>
           <div class="meta-row"><span class="label">Tasks</span><span class="val">${a.tasks}</span></div>
         </div>
@@ -441,7 +712,8 @@
       </article>`;
   }).join("");
   cardsEl.innerHTML = fragments;
-  document.getElementById("stat-count").textContent = assignments.length;
+  // Total count = featured + individual homeworks
+  document.getElementById("stat-count").textContent = 1 + assignments.length;
 
   // ===== Footer year =====
   document.getElementById("year").textContent = new Date().getFullYear();
