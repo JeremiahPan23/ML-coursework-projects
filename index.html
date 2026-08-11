@@ -255,10 +255,6 @@
   .featured-grid {
     display: grid; grid-template-columns: 1fr 1.15fr; gap: 32px; align-items: start;
   }
-  .featured-main .num-tag {
-    font-family: var(--mono); font-weight: 600; font-size: 12px;
-    color: var(--text-mute); margin-bottom: 8px; display: block;
-  }
   .featured-main h2 {
     font-family: var(--serif);
     font-size: clamp(24px, 3vw, 32px);
@@ -505,7 +501,9 @@
 <script>
   // ===== Assignment data =====
   const REPO = "https://github.com/JeremiahPan23/ML-coursework-projects";
-  const NBVIEWER = (path) => `https://nbviewer.org/github/JeremiahPan23/ML-coursework-projects/blob/main/${path}`;
+  // Notebook links point to GitHub's native .ipynb renderer (always current;
+  // nbviewer.org intermittently 404s with stale repo-cache for this repo).
+  const NOTEBOOK_URL = (path) => `${REPO}/blob/main/${path}`;
 
   // ---------- Flagship / featured project: Assignment 3 ----------
   const FEATURED = {
@@ -571,7 +569,6 @@
       <div class="featured-label">Flagship · Assignment 3</div>
       <div class="featured-grid">
         <div class="featured-main">
-          <span class="num-tag">${f.num}</span>
           <h2>${f.title}</h2>
           <p class="subtitle">${f.subtitle}</p>
           <div class="featured-tags">${tagsLine}</div>
@@ -591,7 +588,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
               Open Full Report
             </a>
-            <a class="btn btn-lg-ghost" href="${NBVIEWER(f.notebook)}" target="_blank" rel="noopener">
+            <a class="btn btn-lg-ghost" href="${NOTEBOOK_URL(f.notebook)}" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
               Notebook
             </a>
@@ -637,7 +634,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
             View Report
           </a>
-          <a class="link-ghost" href="${NBVIEWER(a.notebook)}" target="_blank" rel="noopener" title="Open notebook in nbviewer">
+          <a class="link-ghost" href="${NOTEBOOK_URL(a.notebook)}" target="_blank" rel="noopener" title="Open notebook on GitHub">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             Notebook
           </a>
